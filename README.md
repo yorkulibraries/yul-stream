@@ -23,7 +23,7 @@ Install
 -------
 
 * install node and git
-* `git clone https://github.com/edsu/wikistream.git`
+* `git clone https://github.com/ruebot/yul-stream.git`
 * `cd wikistream`
 * `npm install`
 * `cp config.json.tmpl config.json`
