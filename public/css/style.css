@@ -45,12 +45,10 @@ article.update {
 }
 
 article.tweet {
-    width: 45%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     float: left;
-}
-
-article.wikipediaArticle {
-    margin-left: 47%;
 }
 
 div.clearUpdate {
@@ -76,17 +74,4 @@ img.avatar {
     margin-right: 10px;
     border-radius: 5px;
     height: 45px;
-}
-
-a.articleTitle {
-}
-
-a {
-  text-decoration: none;
-}
-
-img.wikipediaIcon {
-    height: 45px;
-    vertical-align: middle;
-    margin-right: 10px;
 }
