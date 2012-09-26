@@ -41,7 +41,7 @@ function main() {
   });
 
   var tweets = new twitter(getConfig());
-  tweets.stream('statuses/filter', {track: '#yolo'}, function(stream) {
+  tweets.stream('statuses/filter', {track: '#toronto'}, function(stream) {
     stream.on('data', function(t) {
       console.log(t)
       tweet(t, sockets);

@@ -11,7 +11,7 @@ body header#sidebar {
     font-size: 11pt;
     position: absolute;
     left: 50px;
-    top: 0px;
+    top: 125px;
     height: 100%;
     width: 125px;
     text-align: center;
@@ -29,6 +29,13 @@ body header#sidebar pre {
     body > header#sidebar {
         position:fixed;
     }
+}
+
+p.navbar {
+  text-align: center;
+  font-family: 'Anonymous Pro', sans-serif;
+  font-weight: bold;
+  font-size: 25pt;
 }
 
 section#updates {
