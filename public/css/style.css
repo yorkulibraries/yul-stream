@@ -1,0 +1,92 @@
+body {
+    font-family: sans-serif;
+    font-size: 12pt;
+    padding: 2em 1em 2em 70px;
+    margin: 0;
+    color: black;
+    background: white;
+}
+
+body header#sidebar {
+    font-size: 11pt;
+    position: absolute;
+    left: 50px;
+    top: 0px;
+    height: 100%;
+    width: 125px;
+    text-align: center;
+}
+
+body header#sidebar pre {
+    font-size: 25pt;
+    font-weight: bold;
+    font-family: 'Anonymous Pro', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+@media screen{
+    body > header#sidebar {
+        position:fixed;
+    }
+}
+
+section#updates {
+}
+
+article.update {
+    width: 70%;
+    margin-left: 150px;
+    margin-right: auto;
+    padding: 20px;
+    clear: both;
+    display: block;
+    border-bottom: thin solid #cccccc;
+}
+
+article.tweet {
+    width: 45%;
+    float: left;
+}
+
+article.wikipediaArticle {
+    margin-left: 47%;
+}
+
+div.clearUpdate {
+    font-size: 0px;
+    line-height: 0px;
+    clear: both;
+}
+
+article header {
+    margin-bottom: 10px;
+    height: 45px;
+    font-weight: bold;
+}
+
+div.created {
+    margin-top: 10px;
+    font-size: 11pt;
+}
+
+img.avatar {
+    vertical-align: middle;
+    float: left;
+    margin-right: 10px;
+    border-radius: 5px;
+    height: 45px;
+}
+
+a.articleTitle {
+}
+
+a {
+  text-decoration: none;
+}
+
+img.wikipediaIcon {
+    height: 45px;
+    vertical-align: middle;
+    margin-right: 10px;
+}

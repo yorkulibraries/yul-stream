@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>York University Library Open Access Week</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/underscore-min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro' rel='stylesheet' type='text/css'> 
+
+    <script type="text/javascript">
+    $(document).ready(main);
+
+    var updateTemplate = _.template('<article class="update"><article class="tweet"><header><a href="http://twitter.com/<%= user %>"><img class="avatar" src="<%= avatar %>"></a><span class="name"><%= name %></span><br><span class="user"><a href="http://twitter.com/<%= user %>"><%= user %></a></span></header><div class="text"><%= textWithLinks %></div><div class="created"><a href="<%= url %>"><%= created %></a></div></article>);
+     
+    function main() {
+      var socket = io.connect();
+      socket.on('connect', function() {
+        socket.on('tweet', function(tweet) {
+          addTweet(tweet);
+        });
+      });
+    }
+
+    function addTweet(tweet) {
+      tweet.textWithLinks = makeLinks(tweet.text);
+      var item = $(updateTemplate(tweet));
+      item.hide();
+      var tweets = $("#tweets");
+      tweets.prepend(item);
+      item.slideDown();
+      // remove old updates so the DOM doesn't bloat memory when 
+      // someone leaves their browser open :-)
+    }
+
+    </script>
+
+    </head>
+    <body>
+        <header id="sidebar">
+            <pre>O
+p
+e
+n
+
+A
+c
+c
+e
+s
+s
+
+W
+e
+e
+k
+
+2
+0
+1
+2</pre>
+        </header>
+        <section id="tweets"></section>
+
+    </body>
+</html>
