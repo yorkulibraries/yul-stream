@@ -9,7 +9,7 @@ The application is inspired by, and heavily uses the code Ed Summers wrote in th
 Thanks
 ------
 
-YUIL Stream stands on several giants shoulders, including:
+YUL Stream stands on several giants shoulders, including:
 
 * [express](http://expressjs.com/)
 * [socket.io](http://socket.io)
