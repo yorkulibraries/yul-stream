@@ -68,6 +68,9 @@ function getConfig() {
       consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
       access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
       access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+      ia_bucket: process.env.IA_BUCKET,
+      ia_access_key: process.env.IA_ACCESS_KEY,
+      ia_secret_key: process.env.IA_SECRET_KEY,
     }
     console.log(config);
     return config;
@@ -94,6 +97,28 @@ function tweet(t, sockets) {
 
 function addLatest(msg) {
   latest.push(msg);
+}
+
+function archive() {
+  var now = new Date();
+  if (archving && now - archiving < 62 * 1000) {
+    console.log("looks like an archive is underway");
+    return;
+  }
+
+  archiving = now;
+  var name = "/" + dateformat(now, 'yyyymmddhhmmss') + '.json';
+  var value = JSON.stringify(latest, null, 2);
+  latest = [];
+
+  var c = ia.createClient({
+    accessKey: config.ia_access_key,
+    sercretKey: config_ia_secret_key,
+    bucket: config.ia_bucket
+  });
+  c.addObject({name: name, value: value}, function() {
+    console.log("archived " + name);
+  });
 }
 
 if (! module.parent) {
