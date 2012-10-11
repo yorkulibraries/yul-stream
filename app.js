@@ -13,6 +13,8 @@ var fs = require('fs'),
 
 var config = getConfig();
 var latest = [];
+var dumpSize = 25;
+var archiving = true;
 
 function main() {
   var sockets = [];
@@ -41,7 +43,7 @@ function main() {
   });
 
   var tweets = new twitter(getConfig());
-  tweets.stream('statuses/filter', {track: '#toronto'}, function(stream) {
+  tweets.stream('statuses/filter', {track: '#blogvsbook'}, function(stream) {
     stream.on('data', function(t) {
       console.log(t)
       tweet(t, sockets);
@@ -97,11 +99,12 @@ function tweet(t, sockets) {
 
 function addLatest(msg) {
   latest.push(msg);
+  if (latest.length > dumpSize) archive();
 }
 
 function archive() {
   var now = new Date();
-  if (archving && now - archiving < 62 * 1000) {
+  if (archiving && now - archiving < 61 * 1000) {
     console.log("looks like an archive is underway");
     return;
   }
@@ -113,7 +116,7 @@ function archive() {
 
   var c = ia.createClient({
     accessKey: config.ia_access_key,
-    sercretKey: config_ia_secret_key,
+    sercretKey: config.ia_secret_key,
     bucket: config.ia_bucket
   });
   c.addObject({name: name, value: value}, function() {
