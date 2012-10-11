@@ -14,7 +14,7 @@ var fs = require('fs'),
 var config = getConfig();
 var latest = [];
 var dumpSize = 25;
-var archiving = true;
+var archiving = false;
 
 function main() {
   var sockets = [];
