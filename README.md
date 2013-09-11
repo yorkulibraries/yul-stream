@@ -1,12 +1,12 @@
-York University Libraries Open Access Week twitter stream
-==========
+## YUL Open Access Week Twitter Stream
+
 
 YUL Stream is a [Node](http://nodejs.org) web application that streams Tweets that reference the hashtag for the 2012 York University Libraries Open Access Week Debate.
 
 The application is inspired by, and heavily uses the code Ed Summers wrote in the wonderful [wikitweets](https://github.com/edsu/wikitweets) application.
 
 
-Thanks
+### Thanks
 ------
 
 YUL Stream stands on several giants shoulders, including:
@@ -19,12 +19,12 @@ YUL Stream stands on several giants shoulders, including:
 * [underscore](http://documentcloud.github.com/underscore/)
 * [wikitweet](https://github.com/edsu/wikitweets)
 
-Install
+### Install
 -------
 
 * install node and git
-* `git clone https://github.com/ruebot/yul-stream.git`
-* `cd wikistream`
+* `git clone https://github.com/yorkulibraries/yul-stream.git`
+* `cd yul-stream`
 * `npm install`
 * `cp config.json.tmpl config.json`
 * get [Twitter](https://dev.twitter.com/apps/new) credentials and add them to 
@@ -33,7 +33,7 @@ Install
 * `node app.js`
 * open http://localhost:3000/ in browser
 
-Licnse
+### License
 ------
 
 ![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")
