@@ -43,7 +43,7 @@ function main() {
   });
 
   var tweets = new twitter(getConfig());
-  tweets.stream('statuses/filter', {track: '#TOPoli'}, function(stream) {
+  tweets.stream('statuses/filter', {track: '#RIPevidence'}, function(stream) {
     stream.on('data', function(t) {
       console.log(t)
       tweet(t, sockets);
